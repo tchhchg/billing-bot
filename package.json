@@ -1,0 +1,27 @@
+﻿{
+  "name": "billing-bot",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "description": "本地账单管理 + 每日支出分析建议插件（形态 A：本地常驻服务 + 飞书机器人卡片）",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "node src/main.ts",
+    "daily": "node src/main.ts --run-daily --no-server --no-scheduler",
+    "catchup": "node src/main.ts --catchup 2 --no-server --no-scheduler",
+    "inbox": "node src/main.ts --import-inbox --no-server --no-scheduler",
+    "mail": "node src/main.ts --fetch-mail --no-server --no-scheduler",
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "test:watch": "node --test --watch \"tests/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  },
+  "optionalDependencies": {
+    "imapflow": "^2.2.1"
+  }
+}
